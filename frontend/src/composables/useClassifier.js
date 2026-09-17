@@ -76,7 +76,12 @@ export function useClassifier() {
         body: JSON.stringify({ query }),
       });
 
-      const data = await response.json();
+      let data;
+      try {
+        data = await response.json();
+      } catch (jsonErr) {
+        throw new Error('El servidor backend no está iniciado o no responde en http://localhost:3001. Por favor abrí una terminal y ejecutá: npm run dev:backend');
+      }
 
       if (!response.ok) {
         if (data.code === 'MISSING_API_KEY') {
@@ -124,7 +129,6 @@ export function useClassifier() {
       elementosAgregados.value.unshift(nuevoElemento);
     }
 
-    // Si el usuario escribió un sinónimo (ej. "Aparato celular"), guardarlo también como alias
     if (terminoOriginal.toLowerCase() !== nombreElemento.toLowerCase()) {
       const yaExisteOriginal = todosLosElementos.value.some(
         el => el.subtipo.toLowerCase() === terminoOriginal.toLowerCase()
