@@ -1,0 +1,57 @@
+﻿# ===================================================
+# DEPENDENCIAS
+# ===================================================
+node_modules/
+*/node_modules/
+
+# ===================================================
+# VARIABLES DE ENTORNO Y SECRETOS (¡CRÍTICO!)
+# Nunca subir claves API como GEMINI_API_KEY a Git
+# ===================================================
+.env
+.env.local
+.env.*.local
+*.env
+backend/.env
+frontend/.env
+!*.env.example
+
+# ===================================================
+# COMPILACIÓN Y BUILDS (Vite / Frontend)
+# Cloudflare genera estos archivos automáticamente al compilar
+# ===================================================
+dist/
+frontend/dist/
+dist-ssr/
+*.local
+
+# ===================================================
+# CLOUDFLARE PAGES / WRANGLER
+# ===================================================
+.wrangler/
+.cloudflare/
+
+# ===================================================
+# LOGS
+# ===================================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===================================================
+# ARCHIVOS DE SISTEMA Y EDITORES
+# ===================================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

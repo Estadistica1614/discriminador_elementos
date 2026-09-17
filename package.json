@@ -1,0 +1,14 @@
+{
+  "name": "discriminador-elementos-secuestrados-pfa",
+  "version": "1.0.0",
+  "description": "Sistema de Discriminación de Elementos Secuestrados con Vue 3, Fuse.js y Google Gemini",
+  "scripts": {
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "extract-taxonomia": "npm --prefix backend run extract-taxonomia"
+  },
+  "keywords": ["pfa", "vue3", "gemini", "fuzzy-search"],
+  "author": "",
+  "license": "ISC"
+}
