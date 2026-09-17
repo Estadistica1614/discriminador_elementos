@@ -76,16 +76,21 @@ export function useClassifier() {
         body: JSON.stringify({ query }),
       });
 
-      let data;
+      const responseText = await response.text();
+      let data = null;
+
       try {
-        data = await response.json();
+        data = JSON.parse(responseText);
       } catch (jsonErr) {
-        throw new Error('El servidor backend no está iniciado o no responde en http://localhost:3001. Por favor abrí una terminal y ejecutá: npm run dev:backend');
+        if (response.status === 404) {
+          throw new Error('La función de backend /api/clasificar no se encontró (404). Si estás en local, verificá que "npm run dev:backend" esté corriendo. Si estás en Cloudflare Pages, asegurate de tener la carpeta functions y la variable GEMINI_API_KEY.');
+        }
+        throw new Error(`Respuesta inválida del servidor (${response.status}): ${responseText.slice(0, 150)}`);
       }
 
       if (!response.ok) {
         if (data.code === 'MISSING_API_KEY') {
-          throw new Error('La API Key de Gemini no está configurada en el archivo backend/.env. Por favor añádela para habilitar las sugerencias con IA.');
+          throw new Error('La variable GEMINI_API_KEY no está configurada en Cloudflare Pages (Environment variables) o en backend/.env.');
         }
         throw new Error(data.error || 'Error al comunicarse con la IA');
       }
