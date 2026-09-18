@@ -82,56 +82,31 @@ export const elementosTodos = [
     {subtipo:'Yuan Renminbi',tipo:'Dinero',incautacion:'DIVISAS'},
     {subtipo:'Zloty',tipo:'Dinero',incautacion:'DIVISAS'},
 //DOCUMENTACION
-    //ANOTACIONES
     {subtipo:'Anotaciones',tipo:'Anotaciones',incautacion:'DOCUMENTACION'},
-    //CEDULA DE IDENTIDAD
     {subtipo:'Cedula de Identidad',tipo:'Cedula de Identidad',incautacion:'DOCUMENTACION'},
-    //CEDULA VERDE/AZUL AUTOMOTOR
     {subtipo:'Cedula Verde/Azul Automotor',tipo:'Cedula Verde/Azul Automotor',incautacion:'DOCUMENTACION'},
-    //CHAPA PATENTE
     {subtipo:'Chapa Patente',tipo:'Chapa Patente',incautacion:'DOCUMENTACION'},
-    //CHEQUE
     {subtipo:'Cheque',tipo:'Cheque',incautacion:'DOCUMENTACION'},
-    //CHEQUERA
     {subtipo:'Chequera',tipo:'Chequera',incautacion:'DOCUMENTACION'},
-    //CUADERNO
     {subtipo:'Cuaderno',tipo:'Cuaderno',incautacion:'DOCUMENTACION'},
-    //DOCUMENTACION DE INTERES PARA LA CAUSA
     {subtipo:'Documentacion de Interes para La Causa',tipo:'Documentacion de Interes para La Causa',incautacion:'DOCUMENTACION'},
-    //DOCUMENTO NACIONAL DE IDENTIDAD
     {subtipo:'Documento Nacional de Identidad (DNI)',tipo:'Documento Nacional de Identidad',incautacion:'DOCUMENTACION'},
-    //HISTORIA CLINICA
     {subtipo:'Historia Clinica',tipo:'Historia Clinica',incautacion:'DOCUMENTACION'},
-    //LIBRO CONTABLE
     {subtipo:'Libro Contable',tipo:'Libro Contable',incautacion:'DOCUMENTACION'},
-    //LIBRO DE ACTAS
     {subtipo:'Libro de Actas',tipo:'Libro de Actas',incautacion:'DOCUMENTACION'},
-    //LICENCIA DE CONDUCIR
     {subtipo:'Licencia de Conducir',tipo:'Licencia de Conducir',incautacion:'DOCUMENTACION'},
-    //PASAPORTE
     {subtipo:'Pasaporte',tipo:'Pasaporte',incautacion:'DOCUMENTACION'},
-    //TALONARIO
     {subtipo:'Talonario',tipo:'Talonario',incautacion:'DOCUMENTACION'},
-    //TARJETA DE CREDITO
     {subtipo:'Tarjeta de Credito',tipo:'Tarjeta de Credito',incautacion:'DOCUMENTACION'},
-    //TARJETA DE DEBITO
     {subtipo:'Tarjeta de Debito',tipo:'Tarjeta de Debito',incautacion:'DOCUMENTACION'},
 //DOCUMENTACION FALSA
-    //BILLETE APOCRIFO/FALSO
     {subtipo:'Billete Apocrifo/Falso',tipo:'Billete Apocrifo/Falso',incautacion:'DOCUMENTACION FALSA'},
-    //DOCUMENTO DE IDENTIDAD FALSO
     {subtipo:'Documento de Identidad (DNI) Falso',tipo:'Documento de Identidad Falso',incautacion:'DOCUMENTACION FALSA'},
-    //DOCUMENTO PUBLICO FALSO
     {subtipo:'Documento Publico Falso',tipo:'Documento Publico Falso',incautacion:'DOCUMENTACION FALSA'},
-    //LICENCIA DE CONDUCIR FALSA
     {subtipo:'Licencia de Conducir Falsa',tipo:'Licencia de Conducir Falsa',incautacion:'DOCUMENTACION FALSA'},
-    //PASAPORTE FALSO
     {subtipo:'Pasaporte Falso',tipo:'Pasaporte Falso',incautacion:'DOCUMENTACION FALSA'},
-    //PATENTE FALSA
     {subtipo:'Patente Falsa',tipo:'Patente Falsa',incautacion:'DOCUMENTACION FALSA'},
-    //TARJETA DE CREDITO FALSA
     {subtipo:'Tarjeta de Credito Falsa',tipo:'Tarjeta de Credito Falsa',incautacion:'DOCUMENTACION FALSA'},
-    //TARJETA DE DEBITO FALSA
     {subtipo:'Tarjeta de Debito Falsa',tipo:'Tarjeta de Debito Falsa',incautacion:'DOCUMENTACION FALSA'},
 //ELEMENTOS PARA ELABORACION DE DROGAS
     //ELEMENTOS DE FRACCIONAMIENTO
@@ -145,50 +120,28 @@ export const elementosTodos = [
     //OTROS
     {subtipo:'Tallos Secos de Marihuana',tipo:'Otros',incautacion:'ELEMENTOS PARA ELABORACION DE DROGAS'},
 //FLORA Y FAUNA
-    //CODIGO ALIMENTARIO
     {subtipo:'Codigo Alimentario',tipo:'Codigo Alimentario',incautacion:'FLORA Y FAUNA'},
-    //COMERCIO INTERNACIONAL DE ESPECIES
     {subtipo:'Comercio Internacional de Especies',tipo:'Comercio Internacional de Especies',incautacion:'FLORA Y FAUNA'},
-    //HOJA RUTA TRANSPORTE YERBA
     {subtipo:'Hoja Ruta Transporte Yerba',tipo:'Hoja Ruta Transporte Yerba',incautacion:'FLORA Y FAUNA'},
-    //LEY DE CARNES
     {subtipo:'Ley de Carnes',tipo:'Ley de Carnes',incautacion:'FLORA Y FAUNA'},
-    //LEY DE CAZA
     {subtipo:'Ley de Caza',tipo:'Ley de Caza',incautacion:'FLORA Y FAUNA'},
-    //LEY DE FAUNA
     {subtipo:'Ley de Fauna',tipo:'Ley de Fauna',incautacion:'FLORA Y FAUNA'},
-    //LEY DE PESCA
     {subtipo:'Ley de Pesca',tipo:'Ley de Pesca',incautacion:'FLORA Y FAUNA'},
-    //LEY DE SENASA
     {subtipo:'Ley de Senasa',tipo:'Ley de Senasa',incautacion:'FLORA Y FAUNA'},
-    //MONUMENTOS NATURALES
     {subtipo:'Monumentos Naturales',tipo:'Monumentos Naturales',incautacion:'FLORA Y FAUNA'},
-    //PROGRAMA NACIONAL PARA LA PREVENCION DE LA ENFERMEDAD HLB DE LOS CITRUS
     {subtipo:'Programa Nacional para La Prevencion de La Enfermedad Hlb de Los Citrus',tipo:'Programa Nacional para La Prevencion de La Enfermedad Hlb de Los Citrus',incautacion:'FLORA Y FAUNA'},
-    //REGISTRO FEDERAL DE PESCA
     {subtipo:'Registro Federal de Pesca',tipo:'Registro Federal de Pesca',incautacion:'FLORA Y FAUNA'},
-    //RIQUEZA FORESTAL
     {subtipo:'Riqueza Forestal',tipo:'Riqueza Forestal',incautacion:'FLORA Y FAUNA'},
 //GRANOS
-    //AFRECHO
     {subtipo:'Afrecho',tipo:'Afrecho',incautacion:'GRANOS'},
-    //CEBADA
     {subtipo:'Cebada',tipo:'Cebada',incautacion:'GRANOS'},
-    //CENTENO
     {subtipo:'Centeno',tipo:'Centeno',incautacion:'GRANOS'},
-    //COLZA
     {subtipo:'Colza',tipo:'Colza',incautacion:'GRANOS'},
-    //LINO
     {subtipo:'Lino',tipo:'Lino',incautacion:'GRANOS'},
-    //MAIZ
     {subtipo:'Maiz',tipo:'Maiz',incautacion:'GRANOS'},
-    //SEMILLAS DE SORGO
     {subtipo:'Semillas de Sorgo',tipo:'Semillas de Sorgo',incautacion:'GRANOS'},
-    //SOJA
     {subtipo:'Soja',tipo:'Soja',incautacion:'GRANOS'},
-    //SORGO
     {subtipo:'Sorgo',tipo:'Sorgo',incautacion:'GRANOS'},
-    //TRIGO
     {subtipo:'Trigo',tipo:'Trigo',incautacion:'GRANOS'},
 //MERCADERIA
     //ALIMENTOS
@@ -2592,50 +2545,28 @@ export const elementosTodos = [
     {subtipo:'Sipcar Inyectable Uso Veterinario',tipo:'Veterinaria',incautacion:'MERCADERIA'},
     {subtipo:'Veneno',tipo:'Veterinaria',incautacion:'MERCADERIA'},
 //PATRIMONIO CULTURAL, ARQUEOLOGICO Y PALEONTOLOGICO
-    //CIRCULACION DE OBRAS DE ARTE
     {subtipo:'Circulacion de Obras de Arte',tipo:'Circulacion de Obras de Arte',incautacion:'PATRIMONIO CULTURAL, ARQUEOLOGICO Y PALEONTOLOGICO'},
-    //HALLAZGOS
     {subtipo:'Hallazgos',tipo:'Hallazgos',incautacion:'PATRIMONIO CULTURAL, ARQUEOLOGICO Y PALEONTOLOGICO'},
-    //PROTECCION DEL PATRIMONIO ARQUEOLOGICO Y PALEONTOLOGICO
     {subtipo:'Proteccion Del Patrimonio Arqueologico y Paleontologico',tipo:'Proteccion Del Patrimonio Arqueologico y Paleontologico',incautacion:'PATRIMONIO CULTURAL, ARQUEOLOGICO Y PALEONTOLOGICO'},
-    //REGISTRO NACIONAL DEL PATRIMONIO ARQUEOLOGICO
     {subtipo:'Registro Nacional Del Patrimonio Arqueologico',tipo:'Registro Nacional Del Patrimonio Arqueologico',incautacion:'PATRIMONIO CULTURAL, ARQUEOLOGICO Y PALEONTOLOGICO'},
 //PRECURSORES QUIMICOS
-    //ACETATO ISOPROPILICO
     {subtipo:'Acetato Isopropilico',tipo:'Acetato Isopropilico',incautacion:'PRECURSORES QUIMICOS'},
-    //ACIDO FENILACETICO
     {subtipo:'Acido Fenilacetico',tipo:'Acido Fenilacetico',incautacion:'PRECURSORES QUIMICOS'},
-    //ACIDO FORMICO
     {subtipo:'Acido Formico',tipo:'Acido Formico',incautacion:'PRECURSORES QUIMICOS'},
-    //ACIDO LISERGICO
     {subtipo:'Acido Lisergico',tipo:'Acido Lisergico',incautacion:'PRECURSORES QUIMICOS'},
-    //ACIDO METILGLICIDICO
     {subtipo:'Acido Metilglicidico',tipo:'Acido Metilglicidico',incautacion:'PRECURSORES QUIMICOS'},
-    //ACIDO N ACETILANTRANILICO
     {subtipo:'Acido N Acetilantranilico',tipo:'Acido N Acetilantranilico',incautacion:'PRECURSORES QUIMICOS'},
-    //ACIDO O AMINOBENZOICO
     {subtipo:'Acido O Aminobenzoico',tipo:'Acido O Aminobenzoico',incautacion:'PRECURSORES QUIMICOS'},
-    //ACIDO YODHIDRICO
     {subtipo:'Acido Yodhidrico',tipo:'Acido Yodhidrico',incautacion:'PRECURSORES QUIMICOS'},
-    //ALCOHOL ISOBUTILICO
     {subtipo:'Alcohol Isobutilico',tipo:'Alcohol Isobutilico',incautacion:'PRECURSORES QUIMICOS'},
 //RESIDUOS PELIGROSOS
-    //DESECHOS DE ACEITE Y AGUA O DE HIDROCARBUROS Y AGUA
     {subtipo:'Desechos de Aceite y Agua o de Hidrocarburos y Agua',tipo:'Desechos de Aceite y Agua o de Hidrocarburos y Agua',incautacion:'RESIDUOS PELIGROSOS'},
-    //DESECHOS DE LA INDUSTRIA DE LA ENERGIA
     {subtipo:'Desechos de La Industria de La Energia',tipo:'Desechos de La Industria de La Energia',incautacion:'RESIDUOS PELIGROSOS'},
-    //DESECHOS DE LA INDUSTRIA QUIMICA
     {subtipo:'Desechos de La Industria Quimica',tipo:'Desechos de La Industria Quimica',incautacion:'RESIDUOS PELIGROSOS'},
-    //DESECHOS DE MEDICAMENTOS Y PRODUCTOS FARMACEUTICOS PARA LA SALUD HUMANA Y ANIMAL
     {subtipo:'Desechos de Medicamentos y Productos Farmaceuticos para La Salud Humana y Animal',tipo:'Desechos de Medicamentos y Productos Farmaceuticos para La Salud Humana y Animal',incautacion:'RESIDUOS PELIGROSOS'},
-    //DESECHOS DE PRODUCTOS FITOSANITARIOS
     {subtipo:'Desechos de Productos Fitosanitarios',tipo:'Desechos de Productos Fitosanitarios',incautacion:'RESIDUOS PELIGROSOS'},
-    //DESECHOS DERIVADOS DE RESINAS, LATEX, PLASTIFICANTES O COLAS Y ADHESIVOS
     {subtipo:'Desechos Derivados de Resinas, Latex, Plastificantes o Colas y Adhesivos',tipo:'Desechos Derivados de Resinas, Latex, Plastificantes o Colas y Adhesivos',incautacion:'RESIDUOS PELIGROSOS'},
-    //DESECHOS DERIVADOS DE TINTAS, COLORANTES, PIGMENTOS, PINTURAS, LACAS O BARNICES
     {subtipo:'Desechos Derivados de Tintas, Colorantes, Pigmentos, Pinturas, Lacas o Barnices',tipo:'Desechos Derivados de Tintas, Colorantes, Pigmentos, Pinturas, Lacas o Barnices',incautacion:'RESIDUOS PELIGROSOS'},
-    //DESECHOS QUE TIENEN CIANURO
     {subtipo:'Desechos que Tienen Cianuro',tipo:'Desechos que Tienen Cianuro',incautacion:'RESIDUOS PELIGROSOS'},
-    //RESIDUOS CON ALQUITRAN
     {subtipo:'Residuos Con Alquitran',tipo:'Residuos Con Alquitran',incautacion:'RESIDUOS PELIGROSOS'},
 ];
