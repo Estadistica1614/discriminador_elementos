@@ -545,6 +545,16 @@
     "incautacion": "ELEMENTOS PARA ELABORACION DE DROGAS"
   },
   {
+    "subtipo":"Recortes de Nylon",
+    "tipo":"Recortes de Nylon",
+    "incautacion":"ELEMENTOS PARA ELABORACION DE DROGAS"
+  },
+  {
+    "subtipo": "Tallos Secos de Marihuana",
+    "tipo":"Tallos Secos de Marihuana",
+    "incautacion":"ELEMENTOS PARA ELABORACION DE DROGAS"
+  },
+  {
     "subtipo": "Codigo Alimentario",
     "tipo": "Codigo Alimentario",
     "incautacion": "FLORA Y FAUNA"
