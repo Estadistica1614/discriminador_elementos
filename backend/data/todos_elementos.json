@@ -525,33 +525,33 @@
     "incautacion": "ELEMENTOS PARA ELABORACION DE DROGAS"
   },
   {
+    "subtipo":"Recortes de Nylon",
+    "tipo":"Elementos de Fraccionamiento",
+    "incautacion":"ELEMENTOS PARA ELABORACION DE DROGAS"
+  },
+  {
     "subtipo": "Papeles para Armado de Cigarrillos",
-    "tipo": "Papeles para Armado de Cigarrillos",
+    "tipo": "Accesorios",
     "incautacion": "ELEMENTOS PARA ELABORACION DE DROGAS"
   },
   {
     "subtipo": "Picador de Marihuana",
-    "tipo": "Picador de Marihuana",
+    "tipo": "Accesorios",
     "incautacion": "ELEMENTOS PARA ELABORACION DE DROGAS"
   },
   {
     "subtipo": "Pipa para Fumar",
-    "tipo": "Pipa para Fumar",
+    "tipo": "Accesorios",
     "incautacion": "ELEMENTOS PARA ELABORACION DE DROGAS"
   },
   {
     "subtipo": "Pipa de Agua",
-    "tipo": "Pipa de Agua",
+    "tipo": "Accesorios",
     "incautacion": "ELEMENTOS PARA ELABORACION DE DROGAS"
   },
   {
-    "subtipo":"Recortes de Nylon",
-    "tipo":"Recortes de Nylon",
-    "incautacion":"ELEMENTOS PARA ELABORACION DE DROGAS"
-  },
-  {
     "subtipo": "Tallos Secos de Marihuana",
-    "tipo":"Tallos Secos de Marihuana",
+    "tipo":"Otros",
     "incautacion":"ELEMENTOS PARA ELABORACION DE DROGAS"
   },
   {
@@ -1530,11 +1530,6 @@
     "incautacion": "MERCADERIA"
   },
   {
-    "subtipo": "Aves",
-    "tipo": "Animales",
-    "incautacion": "MERCADERIA"
-  },
-  {
     "subtipo": "Bovino",
     "tipo": "Animales",
     "incautacion": "MERCADERIA"
@@ -1550,17 +1545,7 @@
     "incautacion": "MERCADERIA"
   },
   {
-    "subtipo": "Equino",
-    "tipo": "Animales",
-    "incautacion": "MERCADERIA"
-  },
-  {
     "subtipo": "Gallinas",
-    "tipo": "Animales",
-    "incautacion": "MERCADERIA"
-  },
-  {
-    "subtipo": "Gallo",
     "tipo": "Animales",
     "incautacion": "MERCADERIA"
   },
@@ -1570,22 +1555,12 @@
     "incautacion": "MERCADERIA"
   },
   {
-    "subtipo": "Mula",
-    "tipo": "Animales",
-    "incautacion": "MERCADERIA"
-  },
-  {
-    "subtipo": "Novillos",
+    "subtipo": "Novillo",
     "tipo": "Animales",
     "incautacion": "MERCADERIA"
   },
   {
     "subtipo": "Ovino",
-    "tipo": "Animales",
-    "incautacion": "MERCADERIA"
-  },
-  {
-    "subtipo": "Perros",
     "tipo": "Animales",
     "incautacion": "MERCADERIA"
   },
@@ -1601,11 +1576,6 @@
   },
   {
     "subtipo": "Porcino",
-    "tipo": "Animales",
-    "incautacion": "MERCADERIA"
-  },
-  {
-    "subtipo": "Reptiles",
     "tipo": "Animales",
     "incautacion": "MERCADERIA"
   },
