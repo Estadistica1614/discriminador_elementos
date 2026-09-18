@@ -1,4 +1,6 @@
 export const elementosTodos = [
+//DIVISAS
+    //DINERO
     {subtipo:'Afgani',tipo:'Dinero',incautacion:'DIVISAS'},
     {subtipo:'Baht',tipo:'Dinero',incautacion:'DIVISAS'},
     {subtipo:'Biir Etiope',tipo:'Dinero',incautacion:'DIVISAS'},
@@ -79,57 +81,117 @@ export const elementosTodos = [
     {subtipo:'Yen',tipo:'Dinero',incautacion:'DIVISAS'},
     {subtipo:'Yuan Renminbi',tipo:'Dinero',incautacion:'DIVISAS'},
     {subtipo:'Zloty',tipo:'Dinero',incautacion:'DIVISAS'},
+//DOCUMENTACION
+    //ANOTACIONES
     {subtipo:'Anotaciones',tipo:'Anotaciones',incautacion:'DOCUMENTACION'},
+    //CEDULA DE IDENTIDAD
     {subtipo:'Cedula de Identidad',tipo:'Cedula de Identidad',incautacion:'DOCUMENTACION'},
+    //CEDULA VERDE/AZUL AUTOMOTOR
     {subtipo:'Cedula Verde/Azul Automotor',tipo:'Cedula Verde/Azul Automotor',incautacion:'DOCUMENTACION'},
+    //CHAPA PATENTE
     {subtipo:'Chapa Patente',tipo:'Chapa Patente',incautacion:'DOCUMENTACION'},
+    //CHEQUE
     {subtipo:'Cheque',tipo:'Cheque',incautacion:'DOCUMENTACION'},
+    //CHEQUERA
     {subtipo:'Chequera',tipo:'Chequera',incautacion:'DOCUMENTACION'},
+    //CUADERNO
     {subtipo:'Cuaderno',tipo:'Cuaderno',incautacion:'DOCUMENTACION'},
+    //DOCUMENTACION DE INTERES PARA LA CAUSA
     {subtipo:'Documentacion de Interes para La Causa',tipo:'Documentacion de Interes para La Causa',incautacion:'DOCUMENTACION'},
+    //DOCUMENTO NACIONAL DE IDENTIDAD
     {subtipo:'Documento Nacional de Identidad (DNI)',tipo:'Documento Nacional de Identidad',incautacion:'DOCUMENTACION'},
+    //HISTORIA CLINICA
     {subtipo:'Historia Clinica',tipo:'Historia Clinica',incautacion:'DOCUMENTACION'},
+    //LIBRO CONTABLE
     {subtipo:'Libro Contable',tipo:'Libro Contable',incautacion:'DOCUMENTACION'},
+    //LIBRO DE ACTAS
+    {subtipo:'Libro de Actas',tipo:'Libro de Actas',incautacion:'DOCUMENTACION'},
+    //LICENCIA DE CONDUCIR
     {subtipo:'Licencia de Conducir',tipo:'Licencia de Conducir',incautacion:'DOCUMENTACION'},
+    //PASAPORTE
     {subtipo:'Pasaporte',tipo:'Pasaporte',incautacion:'DOCUMENTACION'},
+    //TALONARIO
     {subtipo:'Talonario',tipo:'Talonario',incautacion:'DOCUMENTACION'},
+    //TARJETA DE CREDITO
     {subtipo:'Tarjeta de Credito',tipo:'Tarjeta de Credito',incautacion:'DOCUMENTACION'},
+    //TARJETA DE DEBITO
     {subtipo:'Tarjeta de Debito',tipo:'Tarjeta de Debito',incautacion:'DOCUMENTACION'},
+//DOCUMENTACION FALSA
+    //BILLETE APOCRIFO/FALSO
     {subtipo:'Billete Apocrifo/Falso',tipo:'Billete Apocrifo/Falso',incautacion:'DOCUMENTACION FALSA'},
+    //DOCUMENTO DE IDENTIDAD FALSO
     {subtipo:'Documento de Identidad (DNI) Falso',tipo:'Documento de Identidad Falso',incautacion:'DOCUMENTACION FALSA'},
+    //DOCUMENTO PUBLICO FALSO
     {subtipo:'Documento Publico Falso',tipo:'Documento Publico Falso',incautacion:'DOCUMENTACION FALSA'},
+    //LICENCIA DE CONDUCIR FALSA
     {subtipo:'Licencia de Conducir Falsa',tipo:'Licencia de Conducir Falsa',incautacion:'DOCUMENTACION FALSA'},
+    //PASAPORTE FALSO
     {subtipo:'Pasaporte Falso',tipo:'Pasaporte Falso',incautacion:'DOCUMENTACION FALSA'},
+    //PATENTE FALSA
     {subtipo:'Patente Falsa',tipo:'Patente Falsa',incautacion:'DOCUMENTACION FALSA'},
+    //TARJETA DE CREDITO FALSA
     {subtipo:'Tarjeta de Credito Falsa',tipo:'Tarjeta de Credito Falsa',incautacion:'DOCUMENTACION FALSA'},
+    //TARJETA DE DEBITO FALSA
     {subtipo:'Tarjeta de Debito Falsa',tipo:'Tarjeta de Debito Falsa',incautacion:'DOCUMENTACION FALSA'},
+//ELEMENTOS PARA ELABORACION DE DROGAS
+    //ELEMENTOS DE FRACCIONAMIENTO
     {subtipo:'Elementos de Fraccionamiento',tipo:'Elementos de Fraccionamiento',incautacion:'ELEMENTOS PARA ELABORACION DE DROGAS'},
-    {subtipo:'Papeles para Armado de Cigarrillos',tipo:'Papeles para Armado de Cigarrillos',incautacion:'ELEMENTOS PARA ELABORACION DE DROGAS'},
-    {subtipo:'Picador de Marihuana',tipo:'Picador de Marihuana',incautacion:'ELEMENTOS PARA ELABORACION DE DROGAS'},
-    {subtipo:'Pipa para Fumar',tipo:'Pipa para Fumar',incautacion:'ELEMENTOS PARA ELABORACION DE DROGAS'},
-    {subtipo:'Pipa de Agua',tipo:'Pipa de Agua',incautacion:'ELEMENTOS PARA ELABORACION DE DROGAS'},
+    {subtipo:'Recortes de Nylon',tipo:'Elementos de Fraccionamiento',incautacion:'ELEMENTOS PARA ELABORACION DE DROGAS'},
+    //ACCESORIOS
+    {subtipo:'Papeles para Armado de Cigarrillos',tipo:'Accesorios',incautacion:'ELEMENTOS PARA ELABORACION DE DROGAS'},
+    {subtipo:'Picador de Marihuana',tipo:'Accesorios',incautacion:'ELEMENTOS PARA ELABORACION DE DROGAS'},
+    {subtipo:'Pipa para Fumar',tipo:'Accesorios',incautacion:'ELEMENTOS PARA ELABORACION DE DROGAS'},
+    {subtipo:'Pipa de Agua',tipo:'Accesorios',incautacion:'ELEMENTOS PARA ELABORACION DE DROGAS'},
+    //OTROS
+    {subtipo:'Tallos Secos de Marihuana',tipo:'Otros',incautacion:'ELEMENTOS PARA ELABORACION DE DROGAS'},
+//FLORA Y FAUNA
+    //CODIGO ALIMENTARIO
     {subtipo:'Codigo Alimentario',tipo:'Codigo Alimentario',incautacion:'FLORA Y FAUNA'},
+    //COMERCIO INTERNACIONAL DE ESPECIES
     {subtipo:'Comercio Internacional de Especies',tipo:'Comercio Internacional de Especies',incautacion:'FLORA Y FAUNA'},
+    //HOJA RUTA TRANSPORTE YERBA
     {subtipo:'Hoja Ruta Transporte Yerba',tipo:'Hoja Ruta Transporte Yerba',incautacion:'FLORA Y FAUNA'},
+    //LEY DE CARNES
     {subtipo:'Ley de Carnes',tipo:'Ley de Carnes',incautacion:'FLORA Y FAUNA'},
+    //LEY DE CAZA
     {subtipo:'Ley de Caza',tipo:'Ley de Caza',incautacion:'FLORA Y FAUNA'},
+    //LEY DE FAUNA
     {subtipo:'Ley de Fauna',tipo:'Ley de Fauna',incautacion:'FLORA Y FAUNA'},
+    //LEY DE PESCA
     {subtipo:'Ley de Pesca',tipo:'Ley de Pesca',incautacion:'FLORA Y FAUNA'},
+    //LEY DE SENASA
     {subtipo:'Ley de Senasa',tipo:'Ley de Senasa',incautacion:'FLORA Y FAUNA'},
+    //MONUMENTOS NATURALES
     {subtipo:'Monumentos Naturales',tipo:'Monumentos Naturales',incautacion:'FLORA Y FAUNA'},
+    //PROGRAMA NACIONAL PARA LA PREVENCION DE LA ENFERMEDAD HLB DE LOS CITRUS
     {subtipo:'Programa Nacional para La Prevencion de La Enfermedad Hlb de Los Citrus',tipo:'Programa Nacional para La Prevencion de La Enfermedad Hlb de Los Citrus',incautacion:'FLORA Y FAUNA'},
+    //REGISTRO FEDERAL DE PESCA
     {subtipo:'Registro Federal de Pesca',tipo:'Registro Federal de Pesca',incautacion:'FLORA Y FAUNA'},
+    //RIQUEZA FORESTAL
     {subtipo:'Riqueza Forestal',tipo:'Riqueza Forestal',incautacion:'FLORA Y FAUNA'},
+//GRANOS
+    //AFRECHO
     {subtipo:'Afrecho',tipo:'Afrecho',incautacion:'GRANOS'},
+    //CEBADA
     {subtipo:'Cebada',tipo:'Cebada',incautacion:'GRANOS'},
+    //CENTENO
     {subtipo:'Centeno',tipo:'Centeno',incautacion:'GRANOS'},
+    //COLZA
     {subtipo:'Colza',tipo:'Colza',incautacion:'GRANOS'},
+    //LINO
     {subtipo:'Lino',tipo:'Lino',incautacion:'GRANOS'},
+    //MAIZ
     {subtipo:'Maiz',tipo:'Maiz',incautacion:'GRANOS'},
+    //SEMILLAS DE SORGO
     {subtipo:'Semillas de Sorgo',tipo:'Semillas de Sorgo',incautacion:'GRANOS'},
+    //SOJA
     {subtipo:'Soja',tipo:'Soja',incautacion:'GRANOS'},
+    //SORGO
     {subtipo:'Sorgo',tipo:'Sorgo',incautacion:'GRANOS'},
+    //TRIGO
     {subtipo:'Trigo',tipo:'Trigo',incautacion:'GRANOS'},
+//MERCADERIA
+    //ALIMENTOS
     {subtipo:'Aceite Comestible',tipo:'Alimentos',incautacion:'MERCADERIA'},
     {subtipo:'Aceituna',tipo:'Alimentos',incautacion:'MERCADERIA'},
     {subtipo:'Acelga',tipo:'Alimentos',incautacion:'MERCADERIA'},
@@ -303,6 +365,7 @@ export const elementosTodos = [
     {subtipo:'Yogurt',tipo:'Alimentos',incautacion:'MERCADERIA'},
     {subtipo:'Zanahoria',tipo:'Alimentos',incautacion:'MERCADERIA'},
     {subtipo:'Zapallo',tipo:'Alimentos',incautacion:'MERCADERIA'},
+    //ANIMALES
     {subtipo:'Aves',tipo:'Animales',incautacion:'MERCADERIA'},
     {subtipo:'Bovino',tipo:'Animales',incautacion:'MERCADERIA'},
     {subtipo:'Carpinchos',tipo:'Animales',incautacion:'MERCADERIA'},
@@ -319,11 +382,12 @@ export const elementosTodos = [
     {subtipo:'Pollo',tipo:'Animales',incautacion:'MERCADERIA'},
     {subtipo:'Porcino',tipo:'Animales',incautacion:'MERCADERIA'},
     {subtipo:'Reptiles',tipo:'Animales',incautacion:'MERCADERIA'},
+    //ARTICULO DE TIENDA
     {subtipo:'Abrochadora',tipo:'Articulo de Tienda',incautacion:'MERCADERIA'},
     {subtipo:'Acuarelas',tipo:'Articulo de Tienda',incautacion:'MERCADERIA'},
     {subtipo:'Agenda',tipo:'Articulo de Tienda',incautacion:'MERCADERIA'},
     {subtipo:'Agujas',tipo:'Articulo de Tienda',incautacion:'MERCADERIA'},
-    {subtipo:'Amoblamientos Del Hogar  ',tipo:'Articulo de Tienda',incautacion:'MERCADERIA'},
+    {subtipo:'Amoblamientos Del Hogar',tipo:'Articulo de Tienda',incautacion:'MERCADERIA'},
     {subtipo:'Arbol de Navidad',tipo:'Articulo de Tienda',incautacion:'MERCADERIA'},
     {subtipo:'Arma de Juguete',tipo:'Articulo de Tienda',incautacion:'MERCADERIA'},
     {subtipo:'Articulos Deportivos y de Esparcimiento',tipo:'Articulo de Tienda',incautacion:'MERCADERIA'},
@@ -423,6 +487,7 @@ export const elementosTodos = [
     {subtipo:'Trompo',tipo:'Articulo de Tienda',incautacion:'MERCADERIA'},
     {subtipo:'Valija',tipo:'Articulo de Tienda',incautacion:'MERCADERIA'},
     {subtipo:'Vinchas',tipo:'Articulo de Tienda',incautacion:'MERCADERIA'},
+    //ARTICULO DEL HOGAR
     {subtipo:'Alacena',tipo:'Articulo Del Hogar',incautacion:'MERCADERIA'},
     {subtipo:'Almohada',tipo:'Articulo Del Hogar',incautacion:'MERCADERIA'},
     {subtipo:'Andador',tipo:'Articulo Del Hogar',incautacion:'MERCADERIA'},
@@ -482,6 +547,7 @@ export const elementosTodos = [
     {subtipo:'Utensilios de Cocina',tipo:'Articulo Del Hogar',incautacion:'MERCADERIA'},
     {subtipo:'Veladores',tipo:'Articulo Del Hogar',incautacion:'MERCADERIA'},
     {subtipo:'Woofler',tipo:'Articulo Del Hogar',incautacion:'MERCADERIA'},
+    //AUTOPARTES
     {subtipo:'Aire Acondicionado Vehiculo',tipo:'Autopartes',incautacion:'MERCADERIA'},
     {subtipo:'Alternador',tipo:'Autopartes',incautacion:'MERCADERIA'},
     {subtipo:'Antena para Auto',tipo:'Autopartes',incautacion:'MERCADERIA'},
@@ -543,6 +609,7 @@ export const elementosTodos = [
     {subtipo:'Turbo Compresor',tipo:'Autopartes',incautacion:'MERCADERIA'},
     {subtipo:'Valvulas',tipo:'Autopartes',incautacion:'MERCADERIA'},
     {subtipo:'Volante de Motor',tipo:'Autopartes',incautacion:'MERCADERIA'},
+    //BAZAR Y MENAJE
     {subtipo:'Adornos',tipo:'Bazar y Menaje',incautacion:'MERCADERIA'},
     {subtipo:'Alcancias',tipo:'Bazar y Menaje',incautacion:'MERCADERIA'},
     {subtipo:'Aromatizador',tipo:'Bazar y Menaje',incautacion:'MERCADERIA'},
@@ -623,6 +690,7 @@ export const elementosTodos = [
     {subtipo:'Tuppers',tipo:'Bazar y Menaje',incautacion:'MERCADERIA'},
     {subtipo:'Vaso',tipo:'Bazar y Menaje',incautacion:'MERCADERIA'},
     {subtipo:'Vaso Plastico Descartable',tipo:'Bazar y Menaje',incautacion:'MERCADERIA'},
+    //BEBIDAS
     {subtipo:'Agua Mineral',tipo:'Bebidas',incautacion:'MERCADERIA'},
     {subtipo:'Bebida Energizante',tipo:'Bebidas',incautacion:'MERCADERIA'},
     {subtipo:'Bebidas con Alcohol',tipo:'Bebidas',incautacion:'MERCADERIA'},
@@ -635,8 +703,10 @@ export const elementosTodos = [
     {subtipo:'Sidra',tipo:'Bebidas',incautacion:'MERCADERIA'},
     {subtipo:'Vino',tipo:'Bebidas',incautacion:'MERCADERIA'},
     {subtipo:'Whisky',tipo:'Bebidas',incautacion:'MERCADERIA'},
+    //CIGARRILLOS
     {subtipo:'Cigarrillo',tipo:'Cigarrillos',incautacion:'MERCADERIA'},
     {subtipo:'Tabaco',tipo:'Cigarrillos',incautacion:'MERCADERIA'},
+    //COMBUSTIBLES Y LUBRICANTES
     {subtipo:'Aditivos',tipo:'Combustibles y Lubricantes',incautacion:'MERCADERIA'},
     {subtipo:'Combustible Envasado',tipo:'Combustibles y Lubricantes',incautacion:'MERCADERIA'},
     {subtipo:'Gasoil Comun',tipo:'Combustibles y Lubricantes',incautacion:'MERCADERIA'},
@@ -646,6 +716,7 @@ export const elementosTodos = [
     {subtipo:'Nafta Comun',tipo:'Combustibles y Lubricantes',incautacion:'MERCADERIA'},
     {subtipo:'Nafta Premium',tipo:'Combustibles y Lubricantes',incautacion:'MERCADERIA'},
     {subtipo:'Nafta Super',tipo:'Combustibles y Lubricantes',incautacion:'MERCADERIA'},
+    //ELECTRICIDAD-ELECTRONICA
     {subtipo:'Accesorios para Celulares',tipo:'Electricidad-Electronica',incautacion:'MERCADERIA'},
     {subtipo:'Accesorios para Consola de Videojuegos',tipo:'Electricidad-Electronica',incautacion:'MERCADERIA'},
     {subtipo:'Adaptadores',tipo:'Electricidad-Electronica',incautacion:'MERCADERIA'},
@@ -933,6 +1004,7 @@ export const elementosTodos = [
     {subtipo:'Ventilador de Techo',tipo:'Electricidad-Electronica',incautacion:'MERCADERIA'},
     {subtipo:'Video Camara',tipo:'Electricidad-Electronica',incautacion:'MERCADERIA'},
     {subtipo:'Video Casetera',tipo:'Electricidad-Electronica',incautacion:'MERCADERIA'},
+    //ELECTRODOMESTICOS
     {subtipo:'Aire Acondicionado',tipo:'Electrodomesticos',incautacion:'MERCADERIA'},
     {subtipo:'Aspiradora',tipo:'Electrodomesticos',incautacion:'MERCADERIA'},
     {subtipo:'Batidora',tipo:'Electrodomesticos',incautacion:'MERCADERIA'},
@@ -959,6 +1031,7 @@ export const elementosTodos = [
     {subtipo:'Paella Electrica',tipo:'Electrodomesticos',incautacion:'MERCADERIA'},
     {subtipo:'Picadora de Carne',tipo:'Electrodomesticos',incautacion:'MERCADERIA'},
     {subtipo:'Pizzera Electrica',tipo:'Electrodomesticos',incautacion:'MERCADERIA'},
+    //ELEMENTOS DE LIMPIEZA
     {subtipo:'Acaroina',tipo:'Elementos de Limpieza',incautacion:'MERCADERIA'},
     {subtipo:'Acondicionador',tipo:'Elementos de Limpieza',incautacion:'MERCADERIA'},
     {subtipo:'Afeitadora Descartable',tipo:'Elementos de Limpieza',incautacion:'MERCADERIA'},
@@ -1033,6 +1106,7 @@ export const elementosTodos = [
     {subtipo:'Trapo Rejilla',tipo:'Elementos de Limpieza',incautacion:'MERCADERIA'},
     {subtipo:'Trapos',tipo:'Elementos de Limpieza',incautacion:'MERCADERIA'},
     {subtipo:'Ventosa Sanitaria',tipo:'Elementos de Limpieza',incautacion:'MERCADERIA'},
+    //EQUIPO MILITAR Y DE SEGURIDAD
     {subtipo:'Accesorio para Correaje',tipo:'Equipo Militar y de Seguridad',incautacion:'MERCADERIA'},
     {subtipo:'Chaleco Antibala',tipo:'Equipo Militar y de Seguridad',incautacion:'MERCADERIA'},
     {subtipo:'Escudo Antimotines',tipo:'Equipo Militar y de Seguridad',incautacion:'MERCADERIA'},
@@ -1044,6 +1118,7 @@ export const elementosTodos = [
     {subtipo:'Silbato',tipo:'Equipo Militar y de Seguridad',incautacion:'MERCADERIA'},
     {subtipo:'Soporte Anti vibratorio',tipo:'Equipo Militar y de Seguridad',incautacion:'MERCADERIA'},
     {subtipo:'Tonfa',tipo:'Equipo Militar y de Seguridad',incautacion:'MERCADERIA'},
+    //EQUIPOS
     {subtipo:'Ablandadora de Agua',tipo:'Equipos',incautacion:'MERCADERIA'},
     {subtipo:'Abrigo Meteorologico',tipo:'Equipos',incautacion:'MERCADERIA'},
     {subtipo:'Acoplado Tanque',tipo:'Equipos',incautacion:'MERCADERIA'},
@@ -1281,6 +1356,7 @@ export const elementosTodos = [
     {subtipo:'Video Casetera Profesional',tipo:'Equipos',incautacion:'MERCADERIA'},
     {subtipo:'Video Proyector',tipo:'Equipos',incautacion:'MERCADERIA'},
     {subtipo:'Video Switcher Digital',tipo:'Equipos',incautacion:'MERCADERIA'},
+    //HERRAMIENTAS Y REPUESTOS
     {subtipo:'Aberturas, Vidrios',tipo:'Herramientas y Repuestos',incautacion:'MERCADERIA'},
     {subtipo:'Acanaladora de Muro',tipo:'Herramientas y Repuestos',incautacion:'MERCADERIA'},
     {subtipo:'Acces. para Central Telefonica',tipo:'Herramientas y Repuestos',incautacion:'MERCADERIA'},
@@ -1807,6 +1883,7 @@ export const elementosTodos = [
     {subtipo:'Ventana',tipo:'Herramientas y Repuestos',incautacion:'MERCADERIA'},
     {subtipo:'Ventiluses de Madera',tipo:'Herramientas y Repuestos',incautacion:'MERCADERIA'},
     {subtipo:'Volante',tipo:'Herramientas y Repuestos',incautacion:'MERCADERIA'},
+    //INDUMENTARIA TEXTIL Y CONFECCIONES
     {subtipo:'Acolchado',tipo:'Indumentaria Textil y Confecciones',incautacion:'MERCADERIA'},
     {subtipo:'Alfombra',tipo:'Indumentaria Textil y Confecciones',incautacion:'MERCADERIA'},
     {subtipo:'Alpargatas',tipo:'Indumentaria Textil y Confecciones',incautacion:'MERCADERIA'},
@@ -2000,6 +2077,7 @@ export const elementosTodos = [
     {subtipo:'Zapato de Seguridad',tipo:'Indumentaria Textil y Confecciones',incautacion:'MERCADERIA'},
     {subtipo:'Zapato Dielectrico',tipo:'Indumentaria Textil y Confecciones',incautacion:'MERCADERIA'},
     {subtipo:'Zapatos',tipo:'Indumentaria Textil y Confecciones',incautacion:'MERCADERIA'},
+    //JARDINERIA
     {subtipo:'Azaleas',tipo:'Jardineria',incautacion:'MERCADERIA'},
     {subtipo:'Carbon Vegetal',tipo:'Jardineria',incautacion:'MERCADERIA'},
     {subtipo:'Claveles',tipo:'Jardineria',incautacion:'MERCADERIA'},
@@ -2026,6 +2104,7 @@ export const elementosTodos = [
     {subtipo:'Semilla D/Perejil',tipo:'Jardineria',incautacion:'MERCADERIA'},
     {subtipo:'Semillas (Jardineria)',tipo:'Jardineria',incautacion:'MERCADERIA'},
     {subtipo:'Sustrato para Siembra',tipo:'Jardineria',incautacion:'MERCADERIA'},
+    //JOYERIA
     {subtipo:'Agujas para Pelo',tipo:'Joyeria',incautacion:'MERCADERIA'},
     {subtipo:'Alajero',tipo:'Joyeria',incautacion:'MERCADERIA'},
     {subtipo:'Anillos',tipo:'Joyeria',incautacion:'MERCADERIA'},
@@ -2049,6 +2128,7 @@ export const elementosTodos = [
     {subtipo:'Rolojes Pulsera',tipo:'Joyeria',incautacion:'MERCADERIA'},
     {subtipo:'Set Hebillas',tipo:'Joyeria',incautacion:'MERCADERIA'},
     {subtipo:'Set Peluqueria',tipo:'Joyeria',incautacion:'MERCADERIA'},
+    //MADERA
     {subtipo:'Alfajia',tipo:'Madera',incautacion:'MERCADERIA'},
     {subtipo:'Cortes de Marcos Maderas',tipo:'Madera',incautacion:'MERCADERIA'},
     {subtipo:'Esquineros de Maderas',tipo:'Madera',incautacion:'MERCADERIA'},
@@ -2069,8 +2149,10 @@ export const elementosTodos = [
     {subtipo:'Terminanciones de Maderas',tipo:'Madera',incautacion:'MERCADERIA'},
     {subtipo:'Tirantes',tipo:'Madera',incautacion:'MERCADERIA'},
     {subtipo:'Vigas de Madera',tipo:'Madera',incautacion:'MERCADERIA'},
+    //MAQUINA
     {subtipo:'Agricola',tipo:'Maquina',incautacion:'MERCADERIA'},
     {subtipo:'Construccion',tipo:'Maquina',incautacion:'MERCADERIA'},
+    //NAUTICA
     {subtipo:'Absorbente Particulado',tipo:'Nautica',incautacion:'MERCADERIA'},
     {subtipo:'Anzuelo',tipo:'Nautica',incautacion:'MERCADERIA'},
     {subtipo:'Barrera Absorbente',tipo:'Nautica',incautacion:'MERCADERIA'},
@@ -2094,6 +2176,7 @@ export const elementosTodos = [
     {subtipo:'Trampa Centollera',tipo:'Nautica',incautacion:'MERCADERIA'},
     {subtipo:'Trampa Nasa',tipo:'Nautica',incautacion:'MERCADERIA'},
     {subtipo:'Trasmallo',tipo:'Nautica',incautacion:'MERCADERIA'},
+    //PRODUCTOS MEDICOS O FARMACEUTICOS O LABORATORIO
     {subtipo:'Acetato de Etilo',tipo:'Productos Medicos o Farmaceuticos o Laboratorio',incautacion:'MERCADERIA'},
     {subtipo:'Acetato de Sodio',tipo:'Productos Medicos o Farmaceuticos o Laboratorio',incautacion:'MERCADERIA'},
     {subtipo:'Acetona',tipo:'Productos Medicos o Farmaceuticos o Laboratorio',incautacion:'MERCADERIA'},
@@ -2496,6 +2579,7 @@ export const elementosTodos = [
     {subtipo:'Xilosa',tipo:'Productos Medicos o Farmaceuticos o Laboratorio',incautacion:'MERCADERIA'},
     {subtipo:'Yerba Medicinal',tipo:'Productos Medicos o Farmaceuticos o Laboratorio',incautacion:'MERCADERIA'},
     {subtipo:'Z-Cal',tipo:'Productos Medicos o Farmaceuticos o Laboratorio',incautacion:'MERCADERIA'},
+    //VETERINARIA
     {subtipo:'Alimento para Ganado',tipo:'Veterinaria',incautacion:'MERCADERIA'},
     {subtipo:'Alimento para Peces',tipo:'Veterinaria',incautacion:'MERCADERIA'},
     {subtipo:'Alimento para Perro',tipo:'Veterinaria',incautacion:'MERCADERIA'},
@@ -2507,27 +2591,51 @@ export const elementosTodos = [
     {subtipo:'Pesticida',tipo:'Veterinaria',incautacion:'MERCADERIA'},
     {subtipo:'Sipcar Inyectable Uso Veterinario',tipo:'Veterinaria',incautacion:'MERCADERIA'},
     {subtipo:'Veneno',tipo:'Veterinaria',incautacion:'MERCADERIA'},
+//PATRIMONIO CULTURAL, ARQUEOLOGICO Y PALEONTOLOGICO
+    //CIRCULACION DE OBRAS DE ARTE
     {subtipo:'Circulacion de Obras de Arte',tipo:'Circulacion de Obras de Arte',incautacion:'PATRIMONIO CULTURAL, ARQUEOLOGICO Y PALEONTOLOGICO'},
+    //HALLAZGOS
     {subtipo:'Hallazgos',tipo:'Hallazgos',incautacion:'PATRIMONIO CULTURAL, ARQUEOLOGICO Y PALEONTOLOGICO'},
+    //PROTECCION DEL PATRIMONIO ARQUEOLOGICO Y PALEONTOLOGICO
     {subtipo:'Proteccion Del Patrimonio Arqueologico y Paleontologico',tipo:'Proteccion Del Patrimonio Arqueologico y Paleontologico',incautacion:'PATRIMONIO CULTURAL, ARQUEOLOGICO Y PALEONTOLOGICO'},
+    //REGISTRO NACIONAL DEL PATRIMONIO ARQUEOLOGICO
     {subtipo:'Registro Nacional Del Patrimonio Arqueologico',tipo:'Registro Nacional Del Patrimonio Arqueologico',incautacion:'PATRIMONIO CULTURAL, ARQUEOLOGICO Y PALEONTOLOGICO'},
+//PRECURSORES QUIMICOS
+    //ACETATO ISOPROPILICO
     {subtipo:'Acetato Isopropilico',tipo:'Acetato Isopropilico',incautacion:'PRECURSORES QUIMICOS'},
+    //ACIDO FENILACETICO
     {subtipo:'Acido Fenilacetico',tipo:'Acido Fenilacetico',incautacion:'PRECURSORES QUIMICOS'},
+    //ACIDO FORMICO
     {subtipo:'Acido Formico',tipo:'Acido Formico',incautacion:'PRECURSORES QUIMICOS'},
+    //ACIDO LISERGICO
     {subtipo:'Acido Lisergico',tipo:'Acido Lisergico',incautacion:'PRECURSORES QUIMICOS'},
+    //ACIDO METILGLICIDICO
     {subtipo:'Acido Metilglicidico',tipo:'Acido Metilglicidico',incautacion:'PRECURSORES QUIMICOS'},
+    //ACIDO N ACETILANTRANILICO
     {subtipo:'Acido N Acetilantranilico',tipo:'Acido N Acetilantranilico',incautacion:'PRECURSORES QUIMICOS'},
+    //ACIDO O AMINOBENZOICO
     {subtipo:'Acido O Aminobenzoico',tipo:'Acido O Aminobenzoico',incautacion:'PRECURSORES QUIMICOS'},
+    //ACIDO YODHIDRICO
     {subtipo:'Acido Yodhidrico',tipo:'Acido Yodhidrico',incautacion:'PRECURSORES QUIMICOS'},
+    //ALCOHOL ISOBUTILICO
     {subtipo:'Alcohol Isobutilico',tipo:'Alcohol Isobutilico',incautacion:'PRECURSORES QUIMICOS'},
+//RESIDUOS PELIGROSOS
+    //DESECHOS DE ACEITE Y AGUA O DE HIDROCARBUROS Y AGUA
     {subtipo:'Desechos de Aceite y Agua o de Hidrocarburos y Agua',tipo:'Desechos de Aceite y Agua o de Hidrocarburos y Agua',incautacion:'RESIDUOS PELIGROSOS'},
+    //DESECHOS DE LA INDUSTRIA DE LA ENERGIA
     {subtipo:'Desechos de La Industria de La Energia',tipo:'Desechos de La Industria de La Energia',incautacion:'RESIDUOS PELIGROSOS'},
+    //DESECHOS DE LA INDUSTRIA QUIMICA
     {subtipo:'Desechos de La Industria Quimica',tipo:'Desechos de La Industria Quimica',incautacion:'RESIDUOS PELIGROSOS'},
+    //DESECHOS DE MEDICAMENTOS Y PRODUCTOS FARMACEUTICOS PARA LA SALUD HUMANA Y ANIMAL
     {subtipo:'Desechos de Medicamentos y Productos Farmaceuticos para La Salud Humana y Animal',tipo:'Desechos de Medicamentos y Productos Farmaceuticos para La Salud Humana y Animal',incautacion:'RESIDUOS PELIGROSOS'},
+    //DESECHOS DE PRODUCTOS FITOSANITARIOS
     {subtipo:'Desechos de Productos Fitosanitarios',tipo:'Desechos de Productos Fitosanitarios',incautacion:'RESIDUOS PELIGROSOS'},
+    //DESECHOS DERIVADOS DE RESINAS, LATEX, PLASTIFICANTES O COLAS Y ADHESIVOS
     {subtipo:'Desechos Derivados de Resinas, Latex, Plastificantes o Colas y Adhesivos',tipo:'Desechos Derivados de Resinas, Latex, Plastificantes o Colas y Adhesivos',incautacion:'RESIDUOS PELIGROSOS'},
+    //DESECHOS DERIVADOS DE TINTAS, COLORANTES, PIGMENTOS, PINTURAS, LACAS O BARNICES
     {subtipo:'Desechos Derivados de Tintas, Colorantes, Pigmentos, Pinturas, Lacas o Barnices',tipo:'Desechos Derivados de Tintas, Colorantes, Pigmentos, Pinturas, Lacas o Barnices',incautacion:'RESIDUOS PELIGROSOS'},
+    //DESECHOS QUE TIENEN CIANURO
     {subtipo:'Desechos que Tienen Cianuro',tipo:'Desechos que Tienen Cianuro',incautacion:'RESIDUOS PELIGROSOS'},
+    //RESIDUOS CON ALQUITRAN
     {subtipo:'Residuos Con Alquitran',tipo:'Residuos Con Alquitran',incautacion:'RESIDUOS PELIGROSOS'},
-    
 ];

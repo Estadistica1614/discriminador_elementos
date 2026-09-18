@@ -146,7 +146,14 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue';
-import arbolData from '@/data/arbolTaxonomia.json';
+import { elementosTodos } from '@/data/elementos.js';
+
+const props = defineProps({
+  elementos: {
+    type: Array,
+    default: null
+  }
+});
 
 defineEmits(['select-element']);
 
@@ -155,14 +162,65 @@ const openIncautaciones = ref({});
 const openTipos = ref({});
 const todosAbiertos = ref(false);
 
-const incautacionesConSubniveles = arbolData.filter(inc => inc.tieneSubniveles || inc.totalSubtipos > 1);
+// Fuente de elementos reactiva
+const listaElementos = computed(() => {
+  return props.elementos && props.elementos.length > 0 ? props.elementos : elementosTodos;
+});
+
+// Construcción dinámica y en tiempo real del Árbol Taxonómico
+const arbolData = computed(() => {
+  const tree = {};
+  listaElementos.value.forEach(e => {
+    const inc = e.incautacion?.trim();
+    const tip = e.tipo?.trim();
+    const sub = e.subtipo?.trim();
+    if (!inc || !tip) return;
+    
+    if (!tree[inc]) tree[inc] = {};
+    if (!tree[inc][tip]) tree[inc][tip] = new Set();
+    if (sub) tree[inc][tip].add(sub);
+  });
+
+  const result = [];
+  Object.keys(tree).sort().forEach(inc => {
+    const tipos = [];
+    Object.keys(tree[inc]).sort().forEach(tip => {
+      const subtipos = Array.from(tree[inc][tip]).sort();
+      const tieneSubnivelReal = subtipos.length > 1 || (subtipos.length === 1 && subtipos[0].toLowerCase() !== tip.toLowerCase());
+      tipos.push({
+        nombre: tip,
+        cantidadSubtipos: subtipos.length,
+        tieneSubnivelReal,
+        subtipos
+      });
+    });
+
+    const totalSubtipos = tipos.reduce((acc, t) => acc + t.cantidadSubtipos, 0);
+    const tiposConSubnivel = tipos.filter(t => t.tieneSubnivelReal);
+
+    result.push({
+      incautacion: inc,
+      totalTipos: tipos.length,
+      totalSubtipos,
+      tipos,
+      tieneSubniveles: tiposConSubnivel.length > 0
+    });
+  });
+
+  return result;
+});
+
+// Filtrar las incautaciones que tienen subniveles reales o coincidencia en el filtro
+const incautacionesConSubniveles = computed(() => {
+  return arbolData.value.filter(inc => inc.tieneSubniveles || inc.totalSubtipos > 1);
+});
 
 const incautacionesFiltradas = computed(() => {
   if (!filtro.value.trim()) {
-    return incautacionesConSubniveles;
+    return incautacionesConSubniveles.value;
   }
   const q = filtro.value.toLowerCase().trim();
-  return arbolData.map(inc => {
+  return arbolData.value.map(inc => {
     const coincideInc = inc.incautacion.toLowerCase().includes(q);
     const tiposCoincidentes = inc.tipos.filter(t => 
       t.nombre.toLowerCase().includes(q) || 
@@ -189,7 +247,7 @@ const toggleTipo = (key) => {
 
 const toggleExpandirTodo = () => {
   todosAbiertos.value = !todosAbiertos.value;
-  incautacionesConSubniveles.forEach(inc => {
+  incautacionesConSubniveles.value.forEach(inc => {
     openIncautaciones.value[inc.incautacion] = todosAbiertos.value;
   });
 };
@@ -197,5 +255,6 @@ const toggleExpandirTodo = () => {
 onMounted(() => {
   openIncautaciones.value['MERCADERIA'] = true;
   openIncautaciones.value['DIVISAS'] = true;
+  openIncautaciones.value['ELEMENTOS PARA ELABORACION DE DROGAS'] = true;
 });
 </script>

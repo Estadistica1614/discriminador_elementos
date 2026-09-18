@@ -1,21 +1,28 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import Fuse from 'fuse.js';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import { elementosTodos } from '../../frontend/src/data/elementos.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Extraer taxonomía oficial dinámicamente en tiempo real desde la fuente única
+function generarTaxonomiaEnMemoria(lista) {
+  const tree = {};
+  lista.forEach(e => {
+    const inc = e.incautacion?.trim();
+    const tip = e.tipo?.trim();
+    if (!inc || !tip) return;
+    if (!tree[inc]) tree[inc] = new Set();
+    tree[inc].add(tip);
+  });
+  const res = {};
+  Object.keys(tree).sort().forEach(k => {
+    res[k] = Array.from(tree[k]).sort();
+  });
+  return res;
+}
 
-// Cargar datos
-const taxonomiaPath = path.resolve(__dirname, '../data/taxonomia.json');
-const taxonomiaData = JSON.parse(fs.readFileSync(taxonomiaPath, 'utf-8'));
-
-const todosElementosPath = path.resolve(__dirname, '../data/todos_elementos.json');
-const todosElementosData = JSON.parse(fs.readFileSync(todosElementosPath, 'utf-8'));
+const taxonomiaData = generarTaxonomiaEnMemoria(elementosTodos);
 
 // Instancia de Fuse para encontrar candidatos relevantes rápidamente
-const fuseBackend = new Fuse(todosElementosData, {
+const fuseBackend = new Fuse(elementosTodos, {
   keys: [
     { name: 'subtipo', weight: 0.8 },
     { name: 'tipo', weight: 0.15 },
@@ -26,14 +33,33 @@ const fuseBackend = new Fuse(todosElementosData, {
   shouldSort: true,
 });
 
-// Lista de modelos ordenados por estabilidad y velocidad
-const AVAILABLE_MODELS = [
-  'gemini-3.5-flash',
-  'gemini-3.5-flash-lite',
-  'gemini-3.7-flash',
-];
+// Sanitizador dinámico que garantiza que nunca se devuelvan categorías inventadas
+function sanitizarClasificacion(incautacionRecibida, tipoRecibido) {
+  const incKeys = Object.keys(taxonomiaData);
+  
+  let incFinal = incKeys.find(k => k.toLowerCase() === (incautacionRecibida || '').toLowerCase());
+  if (!incFinal) {
+    incFinal = incKeys.find(k => k.toLowerCase().includes((incautacionRecibida || '').toLowerCase())) || "MERCADERIA";
+  }
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+  const tiposValidos = taxonomiaData[incFinal] || taxonomiaData["MERCADERIA"] || [];
+  const tRecibido = (tipoRecibido || '').trim().toLowerCase();
+
+  let tipoFinal = tiposValidos.find(t => t.toLowerCase() === tRecibido);
+  if (!tipoFinal) {
+    tipoFinal = tiposValidos.find(t => t.toLowerCase().includes(tRecibido) || tRecibido.includes(t.toLowerCase()));
+  }
+  if (!tipoFinal) {
+    tipoFinal = tiposValidos[0];
+  }
+
+  return { incautacion: incFinal, tipo: tipoFinal };
+}
+
+const AVAILABLE_MODELS = [
+  'gemini-3.5-flash-lite',
+  'gemini-3.5-flash'
+];
 
 export class GeminiService {
   constructor(apiKey) {
@@ -50,60 +76,28 @@ export class GeminiService {
   }
 
   getSystemInstruction(candidatos = []) {
-    const taxonomiaStr = JSON.stringify(taxonomiaData.taxonomia, null, 2);
+    const taxonomiaStr = JSON.stringify(taxonomiaData, null, 2);
     const candidatosStr = JSON.stringify(candidatos, null, 2);
 
-    return `Sos un clasificador experto de bienes y elementos secuestrados para la Policía Federal Argentina (PFA).
-Tu tarea es clasificar el término ingresado por un usuario dentro del sistema oficial de secuestros e incautaciones.
+    return `Sos un clasificador de bienes secuestrados para la Policía Federal Argentina (PFA).
+Clasificá el elemento dentro de la taxonomía oficial:
 
-=== REGLAS OBLIGATORIAS Y ESTRICTAS ===
-1. TAXONOMÍA CERRADA: Únicamente podés utilizar los nombres de "incautacion" y "tipo" que existen en el siguiente árbol taxonómico oficial. NO podés inventar nuevas incautaciones ni nuevos tipos bajo ninguna circunstancia.
-
-ÁRBOL TAXONÓMICO OFICIAL PERMITIDO:
+TAXONOMÍA OFICIAL ESTRICTA:
 ${taxonomiaStr}
 
-2. EVALUACIÓN PRIORITARIA DE SINÓNIMOS / EQUIVALENCIAS EN EL CATÁLOGO:
-A continuación tenés una lista de elementos oficiales que ya existen en el sistema y son los más cercanos semánticamente al término buscado:
+CANDIDATOS EXISTENTES EN EL CATÁLOGO:
 ${candidatosStr}
 
-REGLA DE SINÓNIMOS:
-- Si el término que ingresó el usuario es un sinónimo, término coloquial, variante o nombre alternativo de un elemento que YA EXISTE en la lista de arriba (por ejemplo: si ingresó "Aparato celular" y en la lista existe "Celular", o si ingresó "Smartphone" y existe "Celular", o "Dolares" y existe "Dolares Americanos", o "Cuchillo de cocina" y existe "Cuchillo"):
-  * Debes marcar: "es_sinonimo": true
-  * "sinonimo_de": "Nombre EXACTO del elemento en la lista oficial" (Ej: "Celular")
-  * "subtipo_sugerido": "Nombre EXACTO del elemento en la lista oficial" (Ej: "Celular")
-  * "incautacion" y "tipo": Los valores exactos de ese elemento oficial.
-  * "razon": Explicar brevemente la equivalencia (Ej: "El término 'Aparato celular' equivale directamente a 'Celular' ya existente en el catálogo oficial.").
-
-3. CLASIFICACIÓN DE ELEMENTOS NUEVOS:
-- Si el elemento es un objeto real pero NO existe ningún equivalente o sinónimo en el catálogo oficial (por ejemplo: "Placa de video", "Dron", "Panel solar", "Impresora 3D"):
-  * "es_sinonimo": false
-  * "sinonimo_de": null
-  * "subtipo_sugerido": Nombre claro y formal del nuevo elemento ingresado
-  * Ubicarlo en la "incautacion" y "tipo" más adecuado dentro del árbol permitido.
-  * "razon": Explicación concisa del encuadre legal/técnico.
-
-4. CANTIDAD DE OPCIONES:
-- Devolvé 1 o como máximo 2 opciones más probables/pertinentes, ordenadas de mayor a menor certeza.
-
-5. FORMATO DE RESPUESTA JSON:
-{
-  "opciones": [
-    {
-      "subtipo_sugerido": "Nombre del elemento",
-      "incautacion": "NOMBRE EXACTO DE LA INCAUTACION DE LA TAXONOMIA",
-      "tipo": "NOMBRE EXACTO DEL TIPO DE LA TAXONOMIA",
-      "es_sinonimo": true / false,
-      "sinonimo_de": "Nombre exacto del elemento oficial o null",
-      "razon": "Justificación concisa",
-      "confianza": "alta" | "media"
-    }
-  ]
-}`;
+REGLAS:
+1. TAXONOMÍA CERRADA: "incautacion" y "tipo" DEBEN coincidir literalmente con la taxonomía oficial.
+2. SINÓNIMOS: Si el término ingresado equivale a un candidato existente en la lista, marcá es_sinonimo: true, sinonimo_de: "Nombre del elemento oficial", subtipo_sugerido: "Nombre del elemento oficial".
+3. ELEMENTO NUEVO: Si es un elemento no registrado, colocá su nombre en subtipo_sugerido y encuadralo en su incautacion y tipo existente más adecuado.
+4. FORMATO: JSON estricto: {"opciones":[{"subtipo_sugerido":"...","incautacion":"NOMBRE","tipo":"NOMBRE","es_sinonimo":false,"sinonimo_de":null,"razon":"...","confianza":"alta"}]}`;
   }
 
   async clasificarElemento(query) {
     if (!this.apiKey && !process.env.GEMINI_API_KEY) {
-      throw new Error('GEMINI_API_KEY no configurada. Por favor define la variable de entorno GEMINI_API_KEY en backend/.env');
+      throw new Error('GEMINI_API_KEY no configurada en backend/.env');
     }
 
     if (!this.genAI) {
@@ -112,41 +106,39 @@ REGLA DE SINÓNIMOS:
 
     const candidatos = this.obtenerCandidatosCercanos(query, 30);
     const systemInstruction = this.getSystemInstruction(candidatos);
-
-    const userPrompt = `Clasificá el siguiente elemento ingresado por el usuario: "${query.trim()}". Recordá verificar primero si equivale a algún elemento oficial existente en la lista de candidatos provista.`;
+    const userPrompt = `Clasificá: "${query.trim()}".`;
 
     let ultimoError = null;
 
     for (const modelName of AVAILABLE_MODELS) {
-      for (let intento = 1; intento <= 2; intento++) {
-        try {
-          const model = this.genAI.getGenerativeModel({
-            model: modelName,
-            systemInstruction: systemInstruction,
-            generationConfig: {
-              responseMimeType: 'application/json',
-              temperature: 0.1,
-            }
+      try {
+        const model = this.genAI.getGenerativeModel({
+          model: modelName,
+          systemInstruction: systemInstruction,
+          generationConfig: {
+            responseMimeType: 'application/json',
+            temperature: 0.1,
+            maxOutputTokens: 250,
+          }
+        });
+
+        const result = await model.generateContent(userPrompt);
+        const text = result.response.text();
+
+        const parsed = JSON.parse(text);
+        if (parsed.opciones && Array.isArray(parsed.opciones)) {
+          parsed.opciones = parsed.opciones.map(op => {
+            const sanitizado = sanitizarClasificacion(op.incautacion, op.tipo);
+            return {
+              ...op,
+              incautacion: sanitizado.incautacion,
+              tipo: sanitizado.tipo
+            };
           });
-
-          const result = await model.generateContent(userPrompt);
-          const text = result.response.text();
-
-          const parsed = JSON.parse(text);
-          if (parsed.opciones && Array.isArray(parsed.opciones)) {
-            parsed.opciones = parsed.opciones.filter(op => {
-              const tiposValidos = taxonomiaData.taxonomia[op.incautacion];
-              if (!tiposValidos) return false;
-              return tiposValidos.includes(op.tipo);
-            });
-          }
-          return parsed;
-        } catch (err) {
-          ultimoError = err;
-          if (intento < 2) {
-            await sleep(300);
-          }
         }
+        return parsed;
+      } catch (err) {
+        ultimoError = err;
       }
     }
 

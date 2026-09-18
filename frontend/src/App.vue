@@ -144,6 +144,7 @@
           <!-- Columna Derecha: Árbol Interactivo de Taxonomía -->
           <div class="lg:col-span-5 xl:col-span-4 sticky top-6">
             <TaxonomyTree 
+              :elementos="todosLosElementos"
               @select-element="onTreeElementSelect"
             />
           </div>

@@ -2,12 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { GeminiService } from './services/geminiService.js';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import { elementosTodos } from '../frontend/src/data/elementos.js';
 
 dotenv.config();
 
@@ -24,29 +19,42 @@ app.use(express.json());
 
 const geminiService = new GeminiService();
 
-// Cargar catálogo de taxonomía
-const taxonomiaPath = path.resolve(__dirname, './data/taxonomia.json');
-let taxonomiaData = null;
-if (fs.existsSync(taxonomiaPath)) {
-  taxonomiaData = JSON.parse(fs.readFileSync(taxonomiaPath, 'utf-8'));
+// Extraer taxonomía en memoria dinámicamente
+function getTaxonomiaData() {
+  const tree = {};
+  elementosTodos.forEach(e => {
+    const inc = e.incautacion?.trim();
+    const tip = e.tipo?.trim();
+    if (!inc || !tip) return;
+    if (!tree[inc]) tree[inc] = new Set();
+    tree[inc].add(tip);
+  });
+  const res = {};
+  Object.keys(tree).sort().forEach(k => {
+    res[k] = Array.from(tree[k]).sort();
+  });
+  return {
+    totalElementos: elementosTodos.length,
+    incautaciones: Object.keys(res),
+    taxonomia: res
+  };
 }
 
 // Endpoint de salud
 app.get('/api/health', (req, res) => {
+  const tax = getTaxonomiaData();
   res.json({
     status: 'ok',
-    message: 'Backend Discriminador PFA Activo',
+    message: 'Backend Discriminador PFA Activo (Dinámico en Memoria)',
     hasApiKey: !!process.env.GEMINI_API_KEY,
-    totalIncautaciones: taxonomiaData ? taxonomiaData.incautaciones.length : 0
+    totalElementos: tax.totalElementos,
+    totalIncautaciones: tax.incautaciones.length
   });
 });
 
 // Endpoint para obtener la taxonomía oficial
 app.get('/api/taxonomia', (req, res) => {
-  if (!taxonomiaData) {
-    return res.status(500).json({ error: 'Taxonomía no disponible' });
-  }
-  res.json(taxonomiaData);
+  res.json(getTaxonomiaData());
 });
 
 // Endpoint para clasificar elemento con IA
@@ -79,6 +87,7 @@ app.post('/api/clasificar', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`=================================================`);
   console.log(` Servidor Discriminador PFA escuchando en: http://localhost:${PORT}`);
-  console.log(` Estado API Key Gemini: ${process.env.GEMINI_API_KEY ? 'CONFIGURADA ✅' : 'PENDIENTE ⚠️ (Definir en backend/.env)'}`);
+  console.log(` Fuente única de datos: frontend/src/data/elementos.js (${elementosTodos.length} elementos)`);
+  console.log(` Estado API Key Gemini: ${process.env.GEMINI_API_KEY ? 'CONFIGURADA ✅' : 'PENDIENTE ⚠️'}`);
   console.log(`=================================================`);
 });
